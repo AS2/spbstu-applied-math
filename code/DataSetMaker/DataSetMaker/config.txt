@@ -1,0 +1,5 @@
+TRAIN-PATH: ./model/train
+ANSWER-PATH: ./model/answer
+WIDTH: 36
+HEIGHT: 36
+LAYERS: 20

@@ -22,12 +22,18 @@ class ModelReader:
                 self.setPower = int.from_bytes(modelFile.read(4), byteorder='big')
 
                 for train in range(self.setPower):
-                    readedTrain = np.reshape(np.fromfile(modelFile, dtype="uint8", count=self.width * self.height * self.layers), newshape=(self.width, self.height, self.layers))
-                    self.train.append(readedTrain)
+                    newTrain = np.zeros(shape=(self.width, self.height, self.layers))
+                    for layer in range(self.layers):
+                        readedLayer = np.reshape(np.fromfile(modelFile, dtype="uint8", count=self.width * self.height), newshape=(self.width, self.height))
+                        newTrain[:, :, layer] = readedLayer[:, :]
+                    self.train.append(newTrain)
 
                 for answer in range(self.setPower):
-                    readedAnswer = np.reshape(np.fromfile(modelFile, dtype="uint8", count=self.width * self.height * self.layers), newshape=(self.width, self.height, self.layers))
-                    self.answers.append(readedAnswer)
+                    newAnswer = np.zeros(shape=(self.width, self.height, self.layers))
+                    for layer in range(self.layers):
+                        readedLayer = np.reshape(np.fromfile(modelFile, dtype="uint8", count=self.width * self.height), newshape=(self.width, self.height))
+                        newAnswer[:, :, layer] = readedLayer[:, :]
+                    self.answers.append(newAnswer)
 
                 return True
         except IOError:

@@ -6,7 +6,6 @@ def run(modelName):
     if not mr.ReadModel(modelName):
         print("Model reading failure. Stop working.")
         return
-
     return
 
 if __name__ == "__main__":

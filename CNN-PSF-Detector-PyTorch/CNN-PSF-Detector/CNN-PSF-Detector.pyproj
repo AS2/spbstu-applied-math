@@ -21,13 +21,53 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CNNModel.py">
+    <Compile Include="BlurExamples.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Blur\BlurCNN.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Blur\BlurDataGenerator.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Blur\BlurTrainer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomMetrics\CustomMetrics.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeblurExamples.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Deblur\DeblurDataGenerator.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PSF-detector-CNN\PSFDetector.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CNN_PSF_Detector.py" />
-    <Compile Include="ModelReader.py">
+    <Compile Include="Deblur\DeblurCNN.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Deblur\DeblurTrainer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DatasetReader\ModelReader.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PSF-detector-CNN\PSFDetectorTrainer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PSF-detector-CNN\PSFCustomsLosses.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Deblur\" />
+    <Folder Include="DatasetReader\" />
+    <Folder Include="CustomMetrics\" />
+    <Folder Include="Blur\" />
+    <Folder Include="PSF-detector-CNN\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
